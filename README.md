@@ -2,15 +2,15 @@
 
 ## Quick Installation
 
-Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run the following to set up first Odoo instance @ `localhost:10019` (default master password: `minhng.info`):
+Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run the following to set up first Odoo instance @ `localhost:10019` (master password is automatically generated):
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019
+curl -s https://raw.githubusercontent.com/Jazb/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019
 ```
-and/or run the following to set up another Odoo instance @ `localhost:11019` (default master password: `minhng.info`):
+and/or run the following to set up another Odoo instance @ `localhost:11019` (master password is automatically generated):
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-two --port 11019 --chat 21019
+curl -s https://raw.githubusercontent.com/Jazb/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-two --port 11019 --chat 21019
 ```
 
 Arguments:
@@ -23,13 +23,13 @@ Arguments:
 Example with a custom master password:
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234
+curl -s https://raw.githubusercontent.com/Jazb/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234
 ```
 
 Example with custom master + database passwords:
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234 --db-password dbSecret123
+curl -s https://raw.githubusercontent.com/Jazb/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234 --db-password dbSecret123
 ```
 
 If `curl` is not found, install it:
