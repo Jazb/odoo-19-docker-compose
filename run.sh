@@ -89,8 +89,10 @@ DEFAULT_DB_PASSWORD="$(grep -E '^[[:space:]]*-[[:space:]]*POSTGRES_PASSWORD=' "$
   | sed -E 's/^[[:space:]]*-[[:space:]]*POSTGRES_PASSWORD=//')"
 
 if [[ -z "$PASSWORD" ]]; then
-  # Generate a 16-character alphanumeric random password
+  # Temporarily disable pipefail to prevent SIGPIPE from tr when head closes the pipe
+  set +o pipefail
   MASTER_PASSWORD=$(LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 16)
+  set -o pipefail
 else
   MASTER_PASSWORD="$PASSWORD"
 fi
